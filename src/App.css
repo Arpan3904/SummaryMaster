@@ -1,8 +1,6 @@
-body{
+.App{
   background: url('./Components/images/abcdef.gif') no-repeat fixed;
   /* background-color:rgb(21, 23, 25); */
   background-size: cover;
-}
-.App{
   overflow: hidden;
 }

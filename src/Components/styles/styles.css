@@ -12,10 +12,10 @@
     box-sizing: border-box;
 	margin: -20px 0 50px;
 } */
-/* body{
+body{
     background: url("../images/abcdef.gif") no-repeat fixed;
     background-size: cover;
-} */
+}
 /* .overall{
     width: 100vw;
     height:80vh;
@@ -223,7 +223,7 @@ button.ghost {
 
 .overlay-panel {
     /* box-sizing: border-box; */
-    background-color: rgb(61, 111, 236,0.45);
+    background-color: rgb(2, 128, 232,0.50);
     /* background-color: rgb(36, 40, 44,0.8); */
 	position: absolute;
 	display: flex;
@@ -243,7 +243,7 @@ button.ghost {
 	transform: translateX(-20%);
     box-sizing: border-box;
     /* background-color: rgb(36, 40, 44,0.8); */
-    background-color: rgb(61, 111, 236,0.45);
+    background-color: rgb(2, 128, 232,0.50);
 }
 
 .containerl.right-panel-active .overlay-left {

@@ -139,17 +139,21 @@ const InputUrl = () => {
             <Summary contentType="url" content={url} onDataReceived={handleDataFromSummary} />
              <RelatedVideos />
 
-<center><div style={{color:"white",width:"70vw"}}>
+            {url &&<> <div className='custom-divider'></div>
+            <center><div style={{color:"white",width:"70vw"}}>
+            
             <h3>Video Information</h3>
             <p className="info-heading">Title: {videoInfo.title}</p>
             <p>Description: {videoInfo.description}</p>
 
-
+            </div></center>
+            <div className='custom-divider'></div>
+            <center><div style={{color:"white",width:"70vw"}}>
             <h3>Channel Information</h3>
             <p className="info-heading">Channel Name: {channelInfo.title}</p>
             <p>Channel Description: {channelInfo.description}</p>
 
-            </div></center>
+            </div></center> </>}
           </>
         )
       }

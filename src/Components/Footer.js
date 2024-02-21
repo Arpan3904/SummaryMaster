@@ -72,42 +72,43 @@ export default function Footer() {
             </div>
             <div className='custom-divider'></div>
             <div>
-                <div>Who is Summary Master for?</div>
-                <div>Summary Master is a summarizing tool desingned for students,writers,teachers,institutions,journalists,and any internet user who needs to quickly understand the essence of lengthy content</div>
-                <div>
-                    <div>
-                        <div><img src={people} style={{width:'2vw',hieght:'4vh'}}></img></div>
-                        <div>Anyone with access to the Internet</div>
-                        <div>Summary Master is for anyone who just needs to get the gist of a long article. You can read this summary, then go read the original article if you want to.</div>
+                <center><div style={{color:"white",fontWeight:"900",fontSize:"28px"}}>Who is Summary Master for?</div></center>
+                <center><div style={{color:"rgb(155, 162, 160)",marginLeft:"30vw",marginRight:"30vw",marginBottom:"9vh"}}>Summary Master is a summarizing tool desingned for students, writers, teachers, institutions, journalists,and any internet user who needs to quickly understand the essence of lengthy content</div></center>
+                <div style={{display:"flex",marginBottom:"9vh",marginLeft:"16vw"}}>
+                    <div style={{display:"flex",flexDirection:"column",width:"20vw",marginRight:"3vw"}}>
+                        <center><div><img src={people} style={{width:'3.6vw',hieght:'7vh'}}></img></div></center>
+                        <center><div style={{color:'white',fontSize:'24px',fontWeight:'bold'}}>Anyone with access</div>
+                        <div style={{color:'white',fontSize:'24px',fontWeight:'bold'}}>to the Internet</div></center>
+                        <center><div style={{color:"rgb(155, 162, 160)"}}>Summary Master is for anyone who just needs to get the gist of a long article. You can read this summary, then go read the original article if you want to.</div></center>
                     </div>
-                    <div>
-                        <div><img src={student} style={{width:'2vw',hieght:'4vh'}}></img></div>
-                        <div>Students</div>
-                        <div>Summary Master is for students studying for exams, who are overwhelmed by information overload. This tool will help them summarize information into a concise, easy to digest piece of text.</div>
+                    <div style={{display:"flex",flexDirection:"column",width:"20vw",marginRight:"3vw"}}>
+                        <center><div><img src={student} style={{width:'3.6vw',hieght:'7vh'}}></img></div>
+                        <div style={{color:'white',fontSize:'24px',fontWeight:'bold'}}>Students</div>
+                        <div style={{color:"rgb(155, 162, 160)"}}>Summary Master is for students studying for exams, who are overwhelmed by information overload. This tool will help them summarize information into a concise, easy to digest piece of text.</div></center>
                     </div>
-                    <div>
-                        <div><img src={writer} style={{width:'2vw',hieght:'4vh'}}></img></div>
-                        <div>Writers</div>
-                        <div>Summary Master is for anyone who writes frequently, and wants to quickly summarize their articles for easier writing and easier reading.</div>
+                    <div style={{display:"flex",flexDirection:"column",width:"20vw"}}>
+                        <center><div><img src={writer} style={{width:'3.6vw',hieght:'7vh'}}></img></div>
+                        <div style={{color:'white',fontSize:'24px',fontWeight:'bold'}}>Writers</div>
+                        <div style={{color:"rgb(155, 162, 160)"}}>Summary Master is for anyone who writes frequently, and wants to quickly summarize their articles for easier writing and easier reading.</div></center>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <div><img src={teacher} style={{width:'2vw',hieght:'4vh'}}></img></div>
-                        <div>Teachers</div>
-                        <div>Summary Master is for teachers who want to summarize a long document or chapter for their students.</div>
+                <center><div style={{display:"flex",marginBottom:"9vh",marginLeft:"16vw"}}>
+                    <div style={{display:"flex",flexDirection:"column",width:"20vw",marginRight:"3vw"}}>
+                        <center><div><img src={teacher} style={{width:'3.6vw',hieght:'7vh'}}></img></div>
+                        <div style={{color:'white',fontSize:'24px',fontWeight:'bold'}}>Teachers</div>
+                        <div style={{color:"rgb(155, 162, 160)"}}>Summary Master is for teachers who want to summarize a long document or chapter for their students.</div></center>
                     </div>
-                    <div>
-                        <div><img src={institute} style={{width:'2vw',hieght:'4vh'}}></img></div>
-                        <div>Institutions</div>
-                        <div>Summary Master is for corporations and institutions who want to condense a piece of content into a summary that is easy to digest for their employees/students.</div>
+                    <div style={{display:"flex",flexDirection:"column",width:"20vw",marginRight:"3vw"}}>
+                        <center><div><img src={institute} style={{width:'3.6vw',hieght:'7vh'}}></img></div>
+                        <div style={{color:'white',fontSize:'24px',fontWeight:'bold'}}>Institutions</div>
+                        <div style={{color:"rgb(155, 162, 160)"}}>Summary Master is for corporations and institutions who want to condense a piece of content into a summary that is easy to digest for their employees/students.</div></center>
                     </div>
-                    <div style={{display:'flex'}}>
-                        <div><img src={journalist} style={{width:'2vw',hieght:'4vh'}}></img></div>
+                    <div style={{display:"flex",flexDirection:"column",width:"20vw"}}>
+                        <center><div><img src={journalist} style={{width:'3.6vw',hieght:'7vh'}}></img></div>
                         <div style={{color:'white',fontSize:'24px',fontWeight:'bold'}}>Journalists</div>
-                        <div>Summary Master is for journalists who need to summarize a long article for their newspaper or magazine.</div>
+                        <div style={{color:"rgb(155, 162, 160)"}}>Summary Master is for journalists who need to summarize a long article for their newspaper or magazine.</div></center>
                     </div>
-                </div>
+                </div></center>
             </div>
         </div>
     )

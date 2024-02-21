@@ -70,7 +70,7 @@ function CustomNavbar({ scrollToComponent }) {
               <a href="">SummarizeNow</a>
             </li>
             <li>
-              <a onClick={scrollToComponent}>Browser Extensions</a>
+              <a onClick={() => scrollToComponent("extensions")}>Browser Extensions</a>
             </li>
             <li>
               <a href="">Features</a>

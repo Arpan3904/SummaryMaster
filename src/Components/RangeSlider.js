@@ -19,10 +19,10 @@ const RangeSlider = () => {
       MuiSlider: {
         styleOverrides: {
           root: {
-            color: "rgb(75, 74, 207)", // Set your desired color here
+            color: "#0280e8", // Set your desired color here
           },
           track: {
-            backgroundColor: "rgb(75, 74, 207)",
+            backgroundColor: "#0280e8",
             // Set your desired color here
           },
           thumb: {
@@ -49,7 +49,7 @@ const RangeSlider = () => {
             valueLabelDisplay="auto"
             className="summary-progress"
             style={{
-              background: `linear-gradient(to right, rgb(75, 74, 207) ${sliderValue}%, #f0f0f0 ${sliderValue}%)`,
+              background: `linear-gradient(to right, #0280e8 ${sliderValue}%, #f0f0f0 ${sliderValue}%)`,
               width: "40%",
               height: "1px",
             }}

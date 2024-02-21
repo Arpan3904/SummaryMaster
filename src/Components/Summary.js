@@ -79,6 +79,7 @@ const Summary = ({ content, contentType, onDataReceived }) => {
         
       <center><SummarizeBtn onClick={handleSummarizeClick} /></center>
       <center><Keywords/></center>
+      <div className='custom-divider'></div>
       
     </>
 

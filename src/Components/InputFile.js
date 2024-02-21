@@ -85,8 +85,8 @@ const InputFile = () => {
               }
             });
             console.log("called11");
-            
-            setText(response.data.textContent.replace(/(\r\n|\n|\r)/gm, ""));
+
+            setText(response.data.textContent.replace(/(\r\n|\n|\r)/gm,""));
             setIsFileText(true);
           } catch (error) {
             console.error('Error uploading and extracting text:', error);
@@ -102,9 +102,8 @@ const InputFile = () => {
                 'Content-Type': 'multipart/form-data'
               }
             });
-            const t = response.data.textContent;
-            // const response2 = await axios.post('http://localhost:5002/add_punctuation', { text: t});
-            setText(t.replace(/(\r\n|\n|\r)/gm, ""));
+            
+            setText(response.data.textContent.replace(/(\r\n|\n|\r)/gm,""));
             setIsFileText(true);
 
           } catch (error) {

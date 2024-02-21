@@ -10,7 +10,6 @@ import FAQ from "./FAQ.js";
 import ChromeExtension from "./Extension.js";
 import AudioReader from "./audioreadder.js";
 import RelatedVideos from "./RelatedVideo.js";
-import History from './history.js'
 
 // import Word1 from './wordtotext.js'
 
@@ -27,11 +26,21 @@ const App = () => {
   const handleOptionChange = (option) => {
     setSelectedOption(option);
   };
+  const scrollToComponent = (componentId) => {
+    const section = document.getElementById(componentId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <>
     {/* <AudioReader></AudioReader> */}
-    <Nav />
+    <Nav scrollToComponent={scrollToComponent}/>
+
       <Textchange />
       
     {/* <div className="mx-auto w-3/4 sm:w-5/6 max-w-[1024px] flex flex-col items-center justify-center">
@@ -88,7 +97,7 @@ const App = () => {
       
     </div>
 
-   {/* <History /> */}
+   
     {/* <FAQ /> */}
     <ChromeExtension />
     <Footer />
