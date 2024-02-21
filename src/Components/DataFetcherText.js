@@ -36,7 +36,7 @@ const DataFetcherText = ({ text, sliderValue, onFetchComplete }) => {
   }, [text, sliderValue, onFetchComplete]);
 
   return (
-  <>console.log("DataFetcherText")</>
+  <></>
   );
 };
 

@@ -10,6 +10,7 @@ import FAQ from "./FAQ.js";
 import ChromeExtension from "./Extension.js";
 import AudioReader from "./audioreadder.js";
 import RelatedVideos from "./RelatedVideo.js";
+import History from './history.js'
 
 // import Word1 from './wordtotext.js'
 
@@ -87,7 +88,7 @@ const App = () => {
       
     </div>
 
-   
+   {/* <History /> */}
     {/* <FAQ /> */}
     <ChromeExtension />
     <Footer />

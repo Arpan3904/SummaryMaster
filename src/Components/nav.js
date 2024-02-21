@@ -12,8 +12,10 @@ import "./styles/myStyles.css";
 import { useNavigate } from "react-router-dom";
 import logo from "./images/logo.png";
 import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
-
+import History from './history';
+let useremail;
 function CustomNavbar({ scrollToComponent }) {
+  const[showHistory,setShowHistory]=useState(false);
   const [user, setUser] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
   const navigate = useNavigate();
@@ -22,6 +24,7 @@ function CustomNavbar({ scrollToComponent }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
+      useremail=user ?user.email:"null";
     });
 
     // Cleanup subscription on unmount
@@ -39,6 +42,7 @@ function CustomNavbar({ scrollToComponent }) {
 
   const handleDialogOpen = () => {
     setOpenDialog(true);
+    console.log(useremail);
   };
 
   const handleDialogClose = () => {
@@ -50,8 +54,14 @@ function CustomNavbar({ scrollToComponent }) {
     setOpenDialog(false); // Close the dialog after signing out
   };
 
+  const handleHistoryClick = () => {
+    setShowHistory(true);
+    navigate("/history"); // Navigate to the history page
+  };
+
   return (
     <>
+     
       <div className="header-container">
         <img src={logo} alt="logo" />
         <div className="header-middle">
@@ -105,6 +115,10 @@ function CustomNavbar({ scrollToComponent }) {
                   <DialogContentText>
                     Hello, {user ? user.email.split("@")[0] : "Guest"}!
                   </DialogContentText>
+                  <Button onClick={handleHistoryClick} color="primary" variant="outlined">
+                    History
+                  </Button>
+                 
                 </DialogContent>
                 <DialogActions>
                   <Button
@@ -122,6 +136,7 @@ function CustomNavbar({ scrollToComponent }) {
           )}
           <strong>
             <div style={{ color: "white", marginTop: "1vh" }}>
+              {console.log(useremail)}
               {user ? (
                 user.email.split("@")[0]
               ) : (
@@ -140,5 +155,5 @@ function CustomNavbar({ scrollToComponent }) {
     </>
   );
 }
-
+export {useremail};
 export default CustomNavbar;
