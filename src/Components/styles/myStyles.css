@@ -45,7 +45,7 @@
 }
 .front-container {
   text-align: center;
-  margin-top: 15vh;
+  margin-top: 25vh;
 }
 
 .content-wrapper {
@@ -543,4 +543,16 @@
   border-radius: 5px; /* Optional for rounded corners */
   cursor: pointer;
 }
+
+.navbar {
+  background-color: rgba(0, 0, 0,0.93); /* Background color */
+  color: #fff; /* Text color */
+  padding: 10px 0; /* Padding */
+  width: 100%; /* Full width */
+  position: fixed; /* Fixed position */
+  top: 0; /* Position at the top */
+  z-index: 1000; /* Ensure it's above other content */
+  
+}
+
 

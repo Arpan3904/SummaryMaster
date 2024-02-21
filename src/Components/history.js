@@ -34,6 +34,7 @@ const EmailHistory = () => {
       <style>
         {`
           .history-container {
+            margin-top:20vh;
             color:white;
             display: flex;
             flex-direction: column;
