@@ -34,8 +34,8 @@ const EmailHistory = () => {
       <style>
         {`
           .history-container {
-            margin-top:20vh;
             color:white;
+            margin-top:20vh;
             display: flex;
             flex-direction: column;
             gap: 1rem; /* Create spacing between history items */

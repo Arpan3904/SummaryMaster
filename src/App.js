@@ -5,7 +5,7 @@ import Home2 from './Components/Home2.js';
 import Register from '../src/Components/registerandlogin.js'
 import Reset from './Components/forgotpassword.js'
 import './App.css'
-import  History  from './Components/history.js';
+import  History  from './Components/History.js';
 const App = () => {
   return (
     <div className='App'>

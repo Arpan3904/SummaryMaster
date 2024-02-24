@@ -8,6 +8,7 @@ import JSZip from 'jszip';
 import { Divider } from '@mui/material';
 import upload from './images/file.png';
 import axios from 'axios';
+import Tesseract from 'tesseract.js';
 
 const InputFile = () => {
   const [file, setFile] = useState("");
@@ -50,6 +51,7 @@ const InputFile = () => {
 
       if (file) {
         const fileExtension = file.name.split(".").pop().toLowerCase();
+        console.log(fileExtension);
         if (fileExtension === "txt") {
           const reader = new FileReader();
 
@@ -110,6 +112,21 @@ const InputFile = () => {
             console.error('Error uploading and extracting text:', error);
 
           }
+        }
+        else if (fileExtension === "jpg" || fileExtension === "jpeg" || fileExtension === "png" || fileExtension === "bmp" || fileExtension === "gif" || fileExtension === "tiff") {
+          const reader = new FileReader();
+  
+          reader.onload = async () => {
+            const { data: { text } } = await Tesseract.recognize(
+              reader.result,
+              'eng', // language
+              { logger: (m) => console.log(m) } // optional logger
+            );
+            setText(text.replace(/(\r\n|\n|\r)/gm,""));
+            setIsFileText(true);
+          };
+  
+          reader.readAsDataURL(file);
         }
         else {
           console.error("Unsupported file format");

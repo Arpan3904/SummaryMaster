@@ -1,19 +1,29 @@
+.navbar {
+  background-color: rgba(0, 0, 0,0.93); /* Background color */
+  color: #fff; /* Text color */
+  padding: 10px 0; /* Padding */
+  width: 100%; /* Full width */
+  position: fixed; /* Fixed position */
+  top: 0; /* Position at the top */
+  z-index: 1000; /* Ensure it's above other content */
+}
 .header-container img {
   width: 10vw;
-  height: 15vh;
+  height: 14vh;
 }
 .header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 20vw;
-  padding-top: 3vh;
-  padding-right: 20vw;
+  padding-left: 10vw;
+  padding-top: 0.1vh;
+  padding-right: 10vw;
 }
 .header-middle ui {
   display: flex;
   margin-top: 4vh;
   list-style: none;
+  font-size:4vh;
 }
 .header-middle ui li a {
   color: rgb(155, 169, 180);
@@ -25,7 +35,7 @@
   margin-top: 3vh;
 }
 .last-btn2 {
-  background-color:#0280e8;
+  background-color:#0093d1;
   padding: 10px;
   font-size: 16px;
   border: none;
@@ -36,7 +46,7 @@
   cursor: pointer;
 }
 .last-btn1 {
-  color: #0280e8;
+  color: #0093d1;
   background: none;
   border: none;
   font-size: 16px;
@@ -45,7 +55,7 @@
 }
 .front-container {
   text-align: center;
-  margin-top: 25vh;
+  margin-top: 20vh;
 }
 
 .content-wrapper {
@@ -71,14 +81,14 @@
   margin-top: 7vh;
   color: white;
   border-radius: 2px 2px 90px 90px;
-  background-color: #0280e8;
+  background-color: #0093d1;
   margin-left: 39vw;
   margin-right: 38vw;
   padding: 13px;
 }
 .custom-divider {
-  margin-left: 14.5vw;
-  width: 70vw;
+  margin-left: 10vw;
+  width: 80vw;
   height: 1px;
   background-color: rgb(155, 169, 180); 
   margin-top: 10vh;
@@ -101,7 +111,7 @@
   font-weight: 800;
 }
 .summary-action button:hover{
-  background-color: #0280e8;
+  background-color: #0093d1;
 }
 .url-container{
   margin-left: 12vw;
@@ -118,7 +128,7 @@
 }
 .summary-button{
   margin-top: 2vh;
-  background-color: #0280e8;
+  background-color: #0093d1;
   color: white;
   padding: 2.5vh;
   padding-left: 10vw;
@@ -129,7 +139,7 @@
 }
 .summary-button button{
    font-weight: bold;
-  background-color: #0280e8;
+  background-color: #0093d1;
   color: white;
   padding: 2.5vh;
   padding-left: 10vw;
@@ -269,7 +279,7 @@
   height: 60vh;
 }
 .footer-blue{
-  color: #0280e8;
+  color: #0093d1;
   font-family:cursive;
   font-size: 20px;
   margin-bottom: 1vh;
@@ -307,7 +317,7 @@
   width: 20px;
   height: 10px;
   border-radius: 50%;
-  background: #0280e8;
+  background: #0093d1;
   cursor: pointer;
 }
 .text-container{
@@ -480,7 +490,7 @@
 }
 
 .keyword {
-  background: linear-gradient(135deg,  rgb(51,54,58),  #0280e8,rgb(51,54,58));
+  background: linear-gradient(135deg,  rgb(51,54,58),  #0093d1,rgb(51,54,58));
   color: #fff;
   padding: 12px 24px;
   border-radius: 30px;
@@ -543,16 +553,4 @@
   border-radius: 5px; /* Optional for rounded corners */
   cursor: pointer;
 }
-
-.navbar {
-  background-color: rgba(0, 0, 0,0.93); /* Background color */
-  color: #fff; /* Text color */
-  padding: 10px 0; /* Padding */
-  width: 100%; /* Full width */
-  position: fixed; /* Fixed position */
-  top: 0; /* Position at the top */
-  z-index: 1000; /* Ensure it's above other content */
-  
-}
-
 
