@@ -1,55 +1,8 @@
-// import React, { useState, useEffect } from 'react';
-// import './styles/textchange.css'
 
-// const DynamicTextComponent = () => {
-//   const [displayText, setDisplayText] = useState("Run Live Example.");
-
-//   useEffect(() => {
-//     const firstText = "Youtube Video Link";
-//     const secondText = "Text File";
-//     const thirdText = "Audio-Video";
-//     const intervalTime = 600;
-
-//     const displayTextFunction = () => {
-//       // display first text
-//       setDisplayText(firstText);
-
-//       // display second text
-//       setTimeout(() => {
-//         setDisplayText(secondText);
-//       }, intervalTime * 3);
-
-//       // display third text
-//       setTimeout(() => {
-//         setDisplayText(thirdText);
-//       }, intervalTime * 5);
-//     };
-
-//     const interval = setInterval(() => {
-//       displayTextFunction();
-//     }, intervalTime * 7);
-
-//     displayTextFunction();
-
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   return (
-//     <section className="bg-dark">
-//       <div className="container text-white d-flex flex-column justify-content-center display-1 fw-semibold" style={{ height: '50vh' }}>
-//         <div>Get Summary</div>
-//         <div id="dynamicContent" className="overflow-hidden">{displayText}</div>
-//         <div className="text-warning">Done.</div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default DynamicTextComponent;
 import React, { useEffect, useState } from 'react'
 
 
-export default function TextChanger() {
+export default function TextChanger({ scrollToComponent }) {
     const [texts, setTexts] = useState([
         "Summarize any Paper",
         "Summarize any Paragraph",
@@ -89,7 +42,7 @@ export default function TextChanger() {
             </div>
             <div className='content'>In a Click.</div>
             <div className='front-info'><p>Summery Master helps you summarize any piece of text into concise, easy to digest content so you can free yourself from information overload.</p></div>
-            <div className='front-last'>SUMMARIZE NOW - IT'S FREE</div>
+            <div className='front-last'><a onClick={() => scrollToComponent("summarize")}>SUMMARIZE NOW - IT'S FREE</a></div>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Nav ,{useremail}from './nav';
-
+import Nav,{useremail} from './nav';
 
 const EmailHistory = () => {
   const [history, setHistory] = useState([]);
@@ -23,13 +22,15 @@ const EmailHistory = () => {
     fetchHistory();
   }, [useremail]);
 
+  const uniqueTimes = Array.from(new Set(history.map(item => item.time)));
+
   const handleTimeClick = (time) => {
     setSelectedTime((prevTime) => (prevTime === time ? null : time));
   };
 
   return (
     <div>
-        <Nav/>
+      <Nav/>
       <h2>Email History</h2>
       <style>
         {`
@@ -44,6 +45,7 @@ const EmailHistory = () => {
             border-radius: 5px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
             background-color: #060606; /* Light background for readability (adjustable) */
+            font-family: 'Comic Sans MS', cursive; /* Fun and playful font family */
           }
 
           .history-item {
@@ -65,6 +67,8 @@ const EmailHistory = () => {
             margin: 0; /* Remove default margin for better spacing */
             font-size: 16px;
             line-height: 1.5; /* Improve readability */
+            font-family: 'Comic Sans MS', cursive; /* Fun and playful font family */
+            color: #FFF; 
           }
 
           .history-item p:first-child {
@@ -73,17 +77,24 @@ const EmailHistory = () => {
         `}
       </style>
       <div className="history-container">
-        {history.map((item, index) => (
-          <div key={index} className="history-item">
-            <p onClick={() => handleTimeClick(item.time)}>Time: {item.time}</p>
-            {selectedTime === item.time && (
-              <>
-                <p>Summarized Text: {item.text}</p>
-                <p>Text: {item.content}</p>
-              </>
-            )}
-          </div>
-        ))}
+        {uniqueTimes.map((time, index) => {
+          const item = history.find(item => item.time === time);
+          return (
+            <div key={index} className="history-item">
+              <p onClick={() => handleTimeClick(time)}>Time: {time}</p>
+              {selectedTime === time && (
+                <>
+                  <br />
+                  <p>Text: </p>
+                  <p>{item.content}</p>
+                  <br/>
+                  <p>Summarized Text: </p>
+                  <p>{item.text}</p>
+                </>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

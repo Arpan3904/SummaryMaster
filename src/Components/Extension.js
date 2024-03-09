@@ -5,6 +5,8 @@ import chrome from './images/chrome.png'
 
 export default function Extensions() {
     return (
+        <>
+
         <div className='extension-container'>
             <div className='ex-header'>Browser Extensions</div>
             <div className='ex-desc'>Use Summary Master browser extensions to summarize any webpage in click.</div>
@@ -37,5 +39,6 @@ export default function Extensions() {
                 </div>
             </div>
         </div>
+        </>
     )
 }

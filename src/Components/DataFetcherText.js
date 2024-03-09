@@ -6,7 +6,7 @@ const DataFetcherText = ({ text, sliderValue, onFetchComplete }) => {
   const [keyword,setKeyword]= useState('');
   useEffect(() => {
     const fetchData = async () => {
-      console.log(text);
+      console.log("summarize clicked");
       try {
         const response = await fetch('http://localhost:5000/summary', {
           method: 'POST',

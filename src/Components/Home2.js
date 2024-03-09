@@ -8,10 +8,8 @@ import Textchange from './TextChanger.js';
 import Footer from "./Footer.js";
 import FAQ from "./FAQ.js";
 import ChromeExtension from "./Extension.js";
-import AudioReader from "./audioreadder.js";
-import RelatedVideos from "./RelatedVideo.js";
+import Ft from './Ft.js';
 
-// import Word1 from './wordtotext.js'
 
 const App = () => {
   const [action,setAction] = useState("");
@@ -26,65 +24,51 @@ const App = () => {
   const handleOptionChange = (option) => {
     setSelectedOption(option);
   };
+
+  const scrollTo = (element, duration) => {
+    const navbarHeight = 130;
+    const targetPosition = element.offsetTop - navbarHeight;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+  
+    const animation = (currentTime) => {
+      if (startTime === null) {
+        startTime = currentTime;
+      }
+      const timeElapsed = currentTime - startTime;
+      const run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+  
+    const ease = (t, b, c, d) => {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
+  
+    requestAnimationFrame(animation);
+  };
+
   const scrollToComponent = (componentId) => {
     const section = document.getElementById(componentId);
     if (section) {
-      window.scrollTo({
-        top: section.offsetTop,
-        behavior: "smooth",
-      });
+      scrollTo(section, 1000); // Adjust duration (e.g., 1000ms for 1 second)
     }
   };
 
   return (
     <>
-    {/* <AudioReader></AudioReader> */}
     <Nav scrollToComponent={scrollToComponent}/>
-
-      <Textchange />
+      <Textchange  scrollToComponent={scrollToComponent}/>
       
-    {/* <div className="mx-auto w-3/4 sm:w-5/6 max-w-[1024px] flex flex-col items-center justify-center">
-        <h3 className="h3 mb-4 text-zinc-200">
-          Enter an Article URL or paste your Text
-        </h3>
-        <div className="w-full flex-1 py-4 sm:py-6 md:p-8 !pb-6 space-y-10 flex flex-col">
-        <div className="rounded-xl w-fit p-0.5 mx-auto">
-                  <div className="relative">
-                    <div className="sm:block rounded-xl flex gap-1 mb-1">
-                      <button
-                        onClick={() => handleOptionChange("file")}
-                        className="py-2.5 px-5 flex-col items-center inline-flex font-medium bg-gray-700 text-base text-white"
-                      >
-                        Upload file
-                      </button>
-                      <button
-                        onClick={() => handleOptionChange("url")}
-                        className="py-2.5 px-5 flex-col items-center inline-flex font-medium bg-gray-700 text-base text-white"
-                      >
-                        Add URL
-                      </button>
-                      <button
-                        onClick={() => handleOptionChange("text")}
-                        className="py-2.5 px-5 flex-col items-center inline-flex font-medium bg-purple-600 text-base text-white"
-                      >
-                        Add text
-                      </button>
-                    </div>
-                  </div>
-                </div> */}
-          
-                {/* <div className="flex gap-4">
-                <div className="block w-full focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm font-normal relative">
-                    
-
-      {selectedOption === "file" && <FileSection />}
-      {selectedOption === "text" && <TextSection />}
-      {selectedOption === "url" && <UrlSection />}
-    </div> </div></div></div>
-      <Word1 /> */}
       <div className='summary-container'>
       <div className='custom-divider'></div>
-      <div className='summary-header'><h1>Enter an Artical URL or paste your Text</h1></div>
+      <div className='summary-header' id='summarize'><h1>Enter an Artical URL or paste your Text</h1></div>
       <center><div className='summary-action'>
         <button onClick={() => handleOptionChange("file")}>Upload File</button>
         <button onClick={() => handleOptionChange("url")}>Add URL</button>
@@ -98,9 +82,17 @@ const App = () => {
     </div>
 
    
-    {/* <FAQ /> */}
-    <ChromeExtension />
+    
+    <div id="extensions">
+      <ChromeExtension />
+    </div>
+    <div id="features">
     <Footer />
+    </div>
+    <div id="faq">
+    <FAQ />
+    </div>
+    <Ft scrollToComponent={scrollToComponent}/>
     </>
   );
 };
